@@ -19,12 +19,19 @@ new Vue ({
                 { day: 'Domingo', value: 10200 },
       ],
       showPrices: false,
-      }
+      value:0,
+    }
   },  
   //Funciones que siempre devuelven un valor, donde cada propiedad al sufrir un cambio debe re-ejecutarse
   computed: {
     title () {
       return `${this.name} - ${this.symbol}`
+    },
+    convertedValue(){
+      if(!this.value){
+        return 0
+      }
+      return this.value / this.price 
     }
   },
 
